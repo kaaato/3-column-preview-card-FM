@@ -1,0 +1,196 @@
+:root {
+  --page-color: hsl(0, 0%, 95%);
+  --sedans-color: hsl(31, 77%, 52%);
+  --suvs-color: hsl(184, 100%, 22%);
+  --luxury-color: hsl(179, 100%, 13%);
+  --button-color: hsl(0, 0%, 95%);
+  --ink-headings: hsl(0, 0%, 95%);
+  --ink-text: hsla(0, 0%, 100%, 0.75);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+}
+
+img, picture, svg {
+  block-size: auto;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+ul, ol { 
+  list-style: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+.visually-hidden:not(:focus):not(:active) { 
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+.page { /* body */
+  font-family: "Lexend Deca";
+  font-size: 0.9375rem;
+  background-color: var(--page-color);
+  padding: 5.5rem 1.5rem;
+}
+
+.container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card {
+  padding: 3rem;
+}
+
+.card--sedans {
+  background-color: var(--sedans-color);
+}
+
+.card--sedans::before {
+  content: "";
+  background-image: url(./images/icon-sedans.svg);
+  display: block;
+  width: 64px;
+  height: 40px;
+}
+
+.card--suvs {
+  background-color: var(--suvs-color);
+}
+
+.card--suvs::before {
+  content: "";
+  background-image: url(./images/icon-suvs.svg);
+  display: block;
+  width: 64px;
+  height: 40px;
+}
+
+.card--luxury {
+  background-color: var(--luxury-color);
+}
+
+.card--luxury::before {
+  content: "";
+  background-image: url(./images/icon-luxury.svg);
+  display: block;
+  width: 64px;
+  height: 40px;
+}
+
+.title {
+  font-family: "Big Shoulders Display";
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--ink-headings);
+  margin-top: 1.8rem;
+}
+
+.text {
+  color: var(--ink-text);
+  margin-top: 1.1rem; 
+  line-height: 1.7;
+}
+
+.button {
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+}
+
+.button:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: inherit;
+  color: var(--ink-headings);
+  outline: 2px solid var(--ink-headings)
+}
+
+.button--sedans {
+  color: var(--sedans-color);
+}
+
+.button--suvs {
+  color: var(--suvs-color);
+}
+
+.button--luxury {
+  color: var(--luxury-color);
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 46.875rem) {
+  .page {
+    display: grid;
+    place-content: center;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 57.5rem;
+    min-height: 31.25rem;
+  }
+
+  .card {
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 1fr min-content;
+  }
+
+  .button {
+    padding: 0.75rem 1rem;
+    max-width: 9.125rem;
+  }
+}
